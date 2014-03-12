@@ -21,7 +21,6 @@
 		A847969B18CE62E700A5D1A9 /* BeaconTestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A847969A18CE62E700A5D1A9 /* BeaconTestTests.m */; };
 		A84796A718CE632D00A5D1A9 /* BeaconViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A84796A518CE632D00A5D1A9 /* BeaconViewController.m */; };
 		A84796A818CE632D00A5D1A9 /* BeaconViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A84796A618CE632D00A5D1A9 /* BeaconViewController.xib */; };
-		A84796AA18CE672200A5D1A9 /* ROXIMITYlib.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A84796A918CE672200A5D1A9 /* ROXIMITYlib.framework */; };
 		A84796AC18CE673400A5D1A9 /* ROXIMITYlib.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A84796AB18CE673400A5D1A9 /* ROXIMITYlib.bundle */; };
 		A84796AE18CE675500A5D1A9 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A84796AD18CE675500A5D1A9 /* CoreTelephony.framework */; };
 		A84796B018CE676500A5D1A9 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A84796AF18CE676500A5D1A9 /* MessageUI.framework */; };
@@ -39,6 +38,7 @@
 		A84796F218CE6C1400A5D1A9 /* AFURLResponseSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = A84796E818CE6C1400A5D1A9 /* AFURLResponseSerialization.m */; };
 		A84796F318CE6C1400A5D1A9 /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A84796EA18CE6C1400A5D1A9 /* AFURLSessionManager.m */; };
 		A84796F818CE873700A5D1A9 /* Beacon.m in Sources */ = {isa = PBXBuildFile; fileRef = A84796F718CE873700A5D1A9 /* Beacon.m */; };
+		E0A2646218D0ECB0003FBADF /* ROXIMITYlib.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0A2646118D0ECB0003FBADF /* ROXIMITYlib.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,7 +71,6 @@
 		A84796A418CE632D00A5D1A9 /* BeaconViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BeaconViewController.h; sourceTree = "<group>"; };
 		A84796A518CE632D00A5D1A9 /* BeaconViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BeaconViewController.m; sourceTree = "<group>"; };
 		A84796A618CE632D00A5D1A9 /* BeaconViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BeaconViewController.xib; sourceTree = "<group>"; };
-		A84796A918CE672200A5D1A9 /* ROXIMITYlib.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ROXIMITYlib.framework; sourceTree = "<group>"; };
 		A84796AB18CE673400A5D1A9 /* ROXIMITYlib.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ROXIMITYlib.bundle; sourceTree = SOURCE_ROOT; };
 		A84796AD18CE675500A5D1A9 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 		A84796AF18CE676500A5D1A9 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
@@ -100,6 +99,7 @@
 		A84796EA18CE6C1400A5D1A9 /* AFURLSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLSessionManager.m; sourceTree = "<group>"; };
 		A84796F618CE873700A5D1A9 /* Beacon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Beacon.h; path = BeaconTest/Beacon.h; sourceTree = "<group>"; };
 		A84796F718CE873700A5D1A9 /* Beacon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Beacon.m; path = BeaconTest/Beacon.m; sourceTree = "<group>"; };
+		E0A2646118D0ECB0003FBADF /* ROXIMITYlib.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ROXIMITYlib.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,13 +108,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				A84796B818CE679C00A5D1A9 /* SystemConfiguration.framework in Frameworks */,
+				E0A2646218D0ECB0003FBADF /* ROXIMITYlib.framework in Frameworks */,
 				A84796B618CE678D00A5D1A9 /* AdSupport.framework in Frameworks */,
 				A84796B418CE677A00A5D1A9 /* CFNetwork.framework in Frameworks */,
 				A84796B218CE677000A5D1A9 /* CoreLocation.framework in Frameworks */,
 				A84796B018CE676500A5D1A9 /* MessageUI.framework in Frameworks */,
 				A84796AE18CE675500A5D1A9 /* CoreTelephony.framework in Frameworks */,
 				A847967818CE62E700A5D1A9 /* CoreGraphics.framework in Frameworks */,
-				A84796AA18CE672200A5D1A9 /* ROXIMITYlib.framework in Frameworks */,
 				A847967A18CE62E700A5D1A9 /* UIKit.framework in Frameworks */,
 				A847967618CE62E700A5D1A9 /* Foundation.framework in Frameworks */,
 			);
@@ -156,13 +156,13 @@
 		A847967418CE62E700A5D1A9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E0A2646118D0ECB0003FBADF /* ROXIMITYlib.framework */,
 				A84796B718CE679C00A5D1A9 /* SystemConfiguration.framework */,
 				A84796B518CE678D00A5D1A9 /* AdSupport.framework */,
 				A84796B318CE677A00A5D1A9 /* CFNetwork.framework */,
 				A84796B118CE677000A5D1A9 /* CoreLocation.framework */,
 				A84796AF18CE676500A5D1A9 /* MessageUI.framework */,
 				A84796AD18CE675500A5D1A9 /* CoreTelephony.framework */,
-				A84796A918CE672200A5D1A9 /* ROXIMITYlib.framework */,
 				A847967518CE62E700A5D1A9 /* Foundation.framework */,
 				A847967718CE62E700A5D1A9 /* CoreGraphics.framework */,
 				A847967918CE62E700A5D1A9 /* UIKit.framework */,
@@ -506,7 +506,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer: Todd Fearn (3TVVZ6J6JA)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					/Users/tfearn/Project/BeaconTest,
+					/Users/feartod/project/BeaconTest,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BeaconTest/BeaconTest-Prefix.pch";
@@ -526,7 +526,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer: Todd Fearn (3TVVZ6J6JA)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					/Users/tfearn/Project/BeaconTest,
+					/Users/feartod/project/BeaconTest,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BeaconTest/BeaconTest-Prefix.pch";
@@ -599,6 +599,7 @@
 				A84796A018CE62E700A5D1A9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A84796A118CE62E700A5D1A9 /* Build configuration list for PBXNativeTarget "BeaconTestTests" */ = {
 			isa = XCConfigurationList;
@@ -607,6 +608,7 @@
 				A84796A318CE62E700A5D1A9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -76,7 +76,7 @@
     BOOL found = NO;
     for(Beacon *beacon in self.beacons) {
         if([beacon.name isEqualToString:name]) {
-            beacon.proximity = [NSString stringWithString:proximity];
+            [beacon addProximity:proximity];
             found = YES;
             break;
         }
@@ -85,7 +85,7 @@
     if(! found) {
         Beacon *beacon = [[Beacon alloc] init];
         beacon.name = [NSString stringWithString:name];
-        beacon.proximity = [NSString stringWithString:proximity];
+        [beacon addProximity:proximity];
         [self.beacons addObject:beacon];
     }
 }
@@ -110,7 +110,7 @@
     }
     
     Beacon *beacon = [self.beacons objectAtIndex:[indexPath row]];
-    cell.textLabel.text = [NSString stringWithFormat:@"%@ - %@", beacon.name, beacon.proximity];
+    cell.textLabel.text = [NSString stringWithFormat:@"%@ - %@", beacon.name, [beacon getProximity]];
     
     return cell;
 }
