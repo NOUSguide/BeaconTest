@@ -37,7 +37,7 @@
 		A84796F118CE6C1400A5D1A9 /* AFURLRequestSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = A84796E618CE6C1400A5D1A9 /* AFURLRequestSerialization.m */; };
 		A84796F218CE6C1400A5D1A9 /* AFURLResponseSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = A84796E818CE6C1400A5D1A9 /* AFURLResponseSerialization.m */; };
 		A84796F318CE6C1400A5D1A9 /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A84796EA18CE6C1400A5D1A9 /* AFURLSessionManager.m */; };
-		A84796F818CE873700A5D1A9 /* Beacon.m in Sources */ = {isa = PBXBuildFile; fileRef = A84796F718CE873700A5D1A9 /* Beacon.m */; };
+		A84796F818CE873700A5D1A9 /* NGIBeacon.m in Sources */ = {isa = PBXBuildFile; fileRef = A84796F718CE873700A5D1A9 /* NGIBeacon.m */; };
 		E0A2646218D0ECB0003FBADF /* ROXIMITYlib.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0A2646118D0ECB0003FBADF /* ROXIMITYlib.framework */; };
 /* End PBXBuildFile section */
 
@@ -97,8 +97,8 @@
 		A84796E818CE6C1400A5D1A9 /* AFURLResponseSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLResponseSerialization.m; sourceTree = "<group>"; };
 		A84796E918CE6C1400A5D1A9 /* AFURLSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLSessionManager.h; sourceTree = "<group>"; };
 		A84796EA18CE6C1400A5D1A9 /* AFURLSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLSessionManager.m; sourceTree = "<group>"; };
-		A84796F618CE873700A5D1A9 /* Beacon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Beacon.h; path = BeaconTest/Beacon.h; sourceTree = "<group>"; };
-		A84796F718CE873700A5D1A9 /* Beacon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Beacon.m; path = BeaconTest/Beacon.m; sourceTree = "<group>"; };
+		A84796F618CE873700A5D1A9 /* NGIBeacon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NGIBeacon.h; path = BeaconTest/NGIBeacon.h; sourceTree = "<group>"; };
+		A84796F718CE873700A5D1A9 /* NGIBeacon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NGIBeacon.m; path = BeaconTest/NGIBeacon.m; sourceTree = "<group>"; };
 		E0A2646118D0ECB0003FBADF /* ROXIMITYlib.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ROXIMITYlib.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -251,8 +251,8 @@
 		A84796F418CE86ED00A5D1A9 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				A84796F618CE873700A5D1A9 /* Beacon.h */,
-				A84796F718CE873700A5D1A9 /* Beacon.m */,
+				A84796F618CE873700A5D1A9 /* NGIBeacon.h */,
+				A84796F718CE873700A5D1A9 /* NGIBeacon.m */,
 			);
 			name = Model;
 			path = ..;
@@ -379,7 +379,7 @@
 				A84796F218CE6C1400A5D1A9 /* AFURLResponseSerialization.m in Sources */,
 				A84796F018CE6C1400A5D1A9 /* AFURLConnectionOperation.m in Sources */,
 				A84796EF18CE6C1400A5D1A9 /* AFSecurityPolicy.m in Sources */,
-				A84796F818CE873700A5D1A9 /* Beacon.m in Sources */,
+				A84796F818CE873700A5D1A9 /* NGIBeacon.m in Sources */,
 				A84796ED18CE6C1400A5D1A9 /* AFHTTPSessionManager.m in Sources */,
 				A84796F118CE6C1400A5D1A9 /* AFURLRequestSerialization.m in Sources */,
 				A84796F318CE6C1400A5D1A9 /* AFURLSessionManager.m in Sources */,

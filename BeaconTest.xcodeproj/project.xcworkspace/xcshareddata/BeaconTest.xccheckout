@@ -5,34 +5,34 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>84708CF3-D3B6-4C79-94C7-DB9D9C3110F0</string>
+	<string>C4AD13AE-98F4-484E-8B5A-6BD4900F7E5D</string>
 	<key>IDESourceControlProjectName</key>
 	<string>BeaconTest</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>8FAA56E3-8AA1-4A6A-94B4-12F5512EBCFA</key>
-		<string>https://github.com/tfearn/BeaconTest.git</string>
+		<key>62B2483A-C253-4CDF-A9A7-A6F3EC4AB9C8</key>
+		<string>https://github.com/NOUSguide/BeaconTest.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>BeaconTest.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>8FAA56E3-8AA1-4A6A-94B4-12F5512EBCFA</key>
+		<key>62B2483A-C253-4CDF-A9A7-A6F3EC4AB9C8</key>
 		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://github.com/tfearn/BeaconTest.git</string>
+	<string>https://github.com/NOUSguide/BeaconTest.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>110</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>8FAA56E3-8AA1-4A6A-94B4-12F5512EBCFA</string>
+	<string>62B2483A-C253-4CDF-A9A7-A6F3EC4AB9C8</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>8FAA56E3-8AA1-4A6A-94B4-12F5512EBCFA</string>
+			<string>62B2483A-C253-4CDF-A9A7-A6F3EC4AB9C8</string>
 			<key>IDESourceControlWCCName</key>
 			<string>BeaconTest</string>
 		</dict>

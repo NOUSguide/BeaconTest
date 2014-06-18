@@ -8,27 +8,26 @@
 
 #import "BeaconViewController.h"
 
+#import "NGIBeacon.h"
+
+static NSString * kNGICellIdentifier = @"RoximityBeaconCell";
+
 @interface BeaconViewController ()
+
+@property (nonatomic, strong) NSArray *beacons;
 
 @end
 
 @implementation BeaconViewController
-@synthesize tableView = _tableView;
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        _beacons = [[NSMutableArray alloc] init];
-    }
-    return self;
-}
-
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.beacons = @[];
+    
     self.navigationItem.title = @"My Beacons";
+    
+    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:kNGICellIdentifier];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(receivedStatusNotification:) name:ROX_NOTIF_BEACON_RANGE_UPDATE object:nil];
     
@@ -38,55 +37,56 @@
                                                object:nil];
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-}
 
-//This function is the application’s response to the observation of the “ROX_NOTIF_BEACON_RANGE_UPDATE” string from the Notification Center. Here it is passed a notification containing the userInfo dictionary.
--(void) receivedStatusNotification:(NSNotification *) notification
-{
+/**
+ This function is the application’s response to the observation of the “ROX_NOTIF_BEACON_RANGE_UPDATE” string from the Notification Center. Here it is passed a notification containing the userInfo dictionary. */
+- (void)receivedStatusNotification:(NSNotification *)notification {
     NSDictionary *rangedBeaconsDictionary = notification.userInfo;
     
-    for (NSString * key in rangedBeaconsDictionary.allKeys){
+    for (NSString *key in rangedBeaconsDictionary.allKeys){
+        NSDictionary *beaconDictionary = rangedBeaconsDictionary[key];
+        NSString *beaconName = beaconDictionary[ROX_BEACON_RANGE_KEY_BEACON_NAME];
+        NSNumber *proximityNumber = beaconDictionary[ROX_BEACON_RANGE_KEY_PROXIMITY_VALUE];
         
-        NSDictionary *beaconDictionary = [rangedBeaconsDictionary objectForKey:key];
-        NSString *beaconName = [beaconDictionary objectForKey:ROX_BEACON_RANGE_KEY_BEACON_NAME];
-        NSString *proximity = [beaconDictionary objectForKey:ROX_BEACON_RANGE_KEY_PROXIMITY_STRING];
+        NGIROXProximity proximity = NGIROXProximityUnknown;
         
-        [self addBeaconStatus:beaconName proximity:proximity];
+        if (proximityNumber != nil) {
+            proximity = (NGIROXProximity)[proximityNumber unsignedIntegerValue];
+        }
         
-        NSLog(@"Beacon: %@ is at %@ proximity", beaconName, proximity);
+        [self updateBeaconStatusForBeaconWithName:beaconName proximity:proximity];
     }
     
     [self.tableView reloadData];
 }
 
-//This function is the application’s response to the observation of the “ROX_NOTIF_REGION_ENTERED” string from the Notification Center. Here it is passed a notification containing the userInfo dictionary.
--(void) regionEntered:(NSNotification *) notification
-{
-    //implements a pointer called “userInfo” that points to the userInfo dictionary of the notification
-    NSDictionary *userInfo = notification.userInfo;
+/**
+ This function is the application’s response to the observation of the “ROX_NOTIF_REGION_ENTERED” string from the Notification Center. Here it is passed a notification containing the userInfo dictionary */
+- (void)regionEntered:(NSNotification *)notification {
     
+    // implements a pointer called “userInfo” that points to the userInfo dictionary of the notification
+    NSDictionary *userInfo = notification.userInfo;
 }
 
-- (void)addBeaconStatus:(NSString *)name proximity:(NSString *)proximity {
+- (void)updateBeaconStatusForBeaconWithName:(NSString *)name proximity:(enum NGIROXProximity)proximity {
+    NSParameterAssert(name != nil);
     
-    BOOL found = NO;
-    for(Beacon *beacon in self.beacons) {
-        if([beacon.name isEqualToString:name]) {
-            [beacon addProximity:proximity];
-            found = YES;
-            break;
-        }
+    NSArray *beaconsMatchingName = [self.beacons filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"name = %@", name]];
+
+    NSAssert([beaconsMatchingName count] < 2, @"multiple beacons with same name not supported");
+
+    NGIBeacon *beacon;
+    if ([beaconsMatchingName count] == 1) {
+        beacon = [beaconsMatchingName firstObject];
+    }
+    else if ([beaconsMatchingName count] == 0) {
+        beacon = [[NGIBeacon alloc] init];
+        beacon.name = name;
+        
+        self.beacons = [self.beacons arrayByAddingObject:beacon];
     }
     
-    if(! found) {
-        Beacon *beacon = [[Beacon alloc] init];
-        beacon.name = [NSString stringWithString:name];
-        [beacon addProximity:proximity];
-        [self.beacons addObject:beacon];
-    }
+    beacon.proximity = proximity;
 }
 
 #pragma mark -
@@ -101,15 +101,12 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    static NSString *CellIdentifier = @"Cell";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kNGICellIdentifier forIndexPath:indexPath];
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-    }
-    
-    Beacon *beacon = [self.beacons objectAtIndex:[indexPath row]];
-    cell.textLabel.text = [NSString stringWithFormat:@"%@ - %@", beacon.name, [beacon getProximity]];
+    NGIBeacon *beacon = self.beacons[indexPath.row];
+
+    cell.textLabel.numberOfLines = 0;
+    cell.textLabel.text = [NSString stringWithFormat:@"%@ \n %u - %@", beacon.name, beacon.proximity, [beacon proximityDescription]];
     
     return cell;
 }
