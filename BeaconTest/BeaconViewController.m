@@ -8,6 +8,8 @@
 
 #import "BeaconViewController.h"
 
+#import "NSDate+NGIAddition.h"
+
 #import "NGIBeacon.h"
 
 static NSString * kNGICellIdentifier = @"RoximityBeaconCell";
@@ -28,6 +30,7 @@ static NSString * kNGICellIdentifier = @"RoximityBeaconCell";
     self.navigationItem.title = @"My Beacons";
     
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:kNGICellIdentifier];
+    self.tableView.rowHeight = 80.f;
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(receivedStatusNotification:) name:ROX_NOTIF_BEACON_RANGE_UPDATE object:nil];
     
@@ -89,8 +92,9 @@ static NSString * kNGICellIdentifier = @"RoximityBeaconCell";
     beacon.proximity = proximity;
 }
 
-#pragma mark -
-#pragma mark UITableViewDataSource Methods
+////////////////////////////////////////////////////////////////////////
+#pragma mark - UITableViewDataSource
+////////////////////////////////////////////////////////////////////////
 
 - (NSInteger)numberOfSectionsInTableView: (UITableView *)tableView {
 	return 1;
@@ -103,10 +107,17 @@ static NSString * kNGICellIdentifier = @"RoximityBeaconCell";
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kNGICellIdentifier forIndexPath:indexPath];
     
-    NGIBeacon *beacon = self.beacons[indexPath.row];
-
-    cell.textLabel.numberOfLines = 0;
-    cell.textLabel.text = [NSString stringWithFormat:@"%@ \n %u - %@", beacon.name, beacon.proximity, [beacon proximityDescription]];
+    if (indexPath.row < [self.beacons count]) {
+        NGIBeacon *beacon = self.beacons[indexPath.row];
+        cell.textLabel.numberOfLines = 0;
+        cell.textLabel.text = [NSString stringWithFormat:@"%@ \nProximity: %@ \nUpdated: %@",
+                               beacon.name,
+                               [beacon proximityDescription],
+                               [beacon.updated relativeDateString]];
+    }
+    else {
+        cell.textLabel.text = @"";
+    }
     
     return cell;
 }

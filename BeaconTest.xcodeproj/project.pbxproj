@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7248248D19524F5000BD34E6 /* NSDate+NGIAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = 7248248C19524F5000BD34E6 /* NSDate+NGIAddition.m */; };
 		A847967618CE62E700A5D1A9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A847967518CE62E700A5D1A9 /* Foundation.framework */; };
 		A847967818CE62E700A5D1A9 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A847967718CE62E700A5D1A9 /* CoreGraphics.framework */; };
 		A847967A18CE62E700A5D1A9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A847967918CE62E700A5D1A9 /* UIKit.framework */; };
@@ -52,6 +53,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7248248B19524F5000BD34E6 /* NSDate+NGIAddition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+NGIAddition.h"; sourceTree = "<group>"; };
+		7248248C19524F5000BD34E6 /* NSDate+NGIAddition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+NGIAddition.m"; sourceTree = "<group>"; };
 		A847967218CE62E700A5D1A9 /* BeaconTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BeaconTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A847967518CE62E700A5D1A9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		A847967718CE62E700A5D1A9 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -133,6 +136,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7248248A19524F3A00BD34E6 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				7248248B19524F5000BD34E6 /* NSDate+NGIAddition.h */,
+				7248248C19524F5000BD34E6 /* NSDate+NGIAddition.m */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
 		A847966918CE62E700A5D1A9 = {
 			isa = PBXGroup;
 			children = (
@@ -174,6 +186,7 @@
 		A847967B18CE62E700A5D1A9 /* BeaconTest */ = {
 			isa = PBXGroup;
 			children = (
+				7248248A19524F3A00BD34E6 /* Category */,
 				A84796F418CE86ED00A5D1A9 /* Model */,
 				A84796F518CE870200A5D1A9 /* ViewControllers */,
 				A847968418CE62E700A5D1A9 /* AppDelegate.h */,
@@ -373,6 +386,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A84796EB18CE6C1400A5D1A9 /* AFHTTPRequestOperation.m in Sources */,
+				7248248D19524F5000BD34E6 /* NSDate+NGIAddition.m in Sources */,
 				A847968618CE62E700A5D1A9 /* AppDelegate.m in Sources */,
 				A84796EC18CE6C1400A5D1A9 /* AFHTTPRequestOperationManager.m in Sources */,
 				A84796EE18CE6C1400A5D1A9 /* AFNetworkReachabilityManager.m in Sources */,
