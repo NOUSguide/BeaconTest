@@ -55,12 +55,11 @@
         NSString *proximity = [beaconDictionary objectForKey:ROX_BEACON_RANGE_KEY_PROXIMITY_STRING];
         
         [self addBeaconStatus:beaconName proximity:proximity];
-        [self.tableView reloadData];
-        
         
         NSLog(@"Beacon: %@ is at %@ proximity", beaconName, proximity);
     }
     
+    [self.tableView reloadData];
 }
 
 //This function is the application’s response to the observation of the “ROX_NOTIF_REGION_ENTERED” string from the Notification Center. Here it is passed a notification containing the userInfo dictionary.
