@@ -11,8 +11,11 @@
 
 @implementation AppDelegate
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
-{
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    NSString *roximityApplicationID = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"ROXIMITYApplicationId"];
+   
+    NSAssert(roximityApplicationID != nil && roximityApplicationID.length > 0, @"ROXIMITYApplicationId must be set in projects info.plist");
+    
     [ROXIMITYEngine startWithLaunchOptions:launchOptions andEngineOptions: nil];
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];

@@ -56,7 +56,7 @@
 		A847967518CE62E700A5D1A9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		A847967718CE62E700A5D1A9 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		A847967918CE62E700A5D1A9 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		A847967D18CE62E700A5D1A9 /* BeaconTest-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "BeaconTest-Info.plist"; sourceTree = "<group>"; };
+		A847967D18CE62E700A5D1A9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A847967F18CE62E700A5D1A9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		A847968118CE62E700A5D1A9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A847968318CE62E700A5D1A9 /* BeaconTest-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BeaconTest-Prefix.pch"; sourceTree = "<group>"; };
@@ -187,7 +187,7 @@
 		A847967C18CE62E700A5D1A9 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				A847967D18CE62E700A5D1A9 /* BeaconTest-Info.plist */,
+				A847967D18CE62E700A5D1A9 /* Info.plist */,
 				A847967E18CE62E700A5D1A9 /* InfoPlist.strings */,
 				A847968118CE62E700A5D1A9 /* main.m */,
 				A847968318CE62E700A5D1A9 /* BeaconTest-Prefix.pch */,
@@ -512,7 +512,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BeaconTest/BeaconTest-Prefix.pch";
 				HEADER_SEARCH_PATHS = "$(inherited)";
-				INFOPLIST_FILE = "BeaconTest/BeaconTest-Info.plist";
+				INFOPLIST_FILE = BeaconTest/Info.plist;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "AB2E2BC6-D12C-44D3-83C9-53CA7AFDE21A";
@@ -533,7 +533,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BeaconTest/BeaconTest-Prefix.pch";
 				HEADER_SEARCH_PATHS = "$(inherited)";
-				INFOPLIST_FILE = "BeaconTest/BeaconTest-Info.plist";
+				INFOPLIST_FILE = BeaconTest/Info.plist;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "AB2E2BC6-D12C-44D3-83C9-53CA7AFDE21A";
